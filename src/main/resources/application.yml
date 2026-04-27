@@ -1,0 +1,63 @@
+spring:
+  application:
+    name: business-support-system
+
+  datasource:
+    url: ${JDBC_DATABASE_URL}
+    username: ${JDBC_DATABASE_USERNAME}
+    password: ${JDBC_DATABASE_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        use_sql_comments: true
+
+  jackson:
+    default-property-inclusion: non_null
+    serialization:
+      write-dates-as-timestamps: false
+      indent-output: true
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    baseline-version: 0
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  level:
+    root: INFO
+    com.example.business: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+
+# OpenAI API Configuration
+openai:
+  api-key: ${OPENAI_API_KEY}
+  model: gpt-3.5-turbo
+  temperature: 0.7
+  max-tokens: 1500
+
+# File Upload Configuration
+file:
+  upload-dir: /tmp/business-support/uploads
+  max-size: 52428800  # 50MB
+
+# Server Configuration
+server:
+  port: 8080
+  servlet:
+    context-path: /api

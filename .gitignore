@@ -1,0 +1,53 @@
+HELP.md
+.gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+### ###
+.env               # 로컬 환경변수
+.env.local         # 로컬 환경변수 (덮어쓰기용)
+.env.*.local       # 환경별 설정
+.DS_Store          # macOS 폴더 메타데이터
+.AppleDouble       # Apple 더블 포크
+.LSOverride        # Finder 정보
+*.swp / *.swo      # vim 백업
+*~                 # Emacs 백업
+node_modules/      # npm 패키지
+npm-debug.log*     # npm 로그
+frontend/build/    # React 빌드 결과
+*.log              # 모든 로그 파일
+logs/              # 로그 디렉토리
+tmp/               # 임시 파일
